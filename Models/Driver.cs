@@ -33,7 +33,7 @@ public class Driver : User
     };
 
 
-    public void UpdateLicenseCategory(string newCategory)
+    public static void UpdateLicenseCategory()
     {
         Console.Write("Ingrese el numero de documento del conductor al que desea actualizarle la licensia ");
         string? numberIdentification;
@@ -59,14 +59,14 @@ public class Driver : User
             Thread.Sleep(4000);
             return;
         }
-        newCategory = category;
+        string newCategory = category;
         driverUpdate.LicenseCategory = newCategory;
         Console.WriteLine("la categoria de la Licencia fue actualizada con exito.");
         Thread.Sleep(4000);
 
     }
 
-    public void AddExperience(int years)
+    public static void AddExperience()
     {
         Console.Write("Ingrese el numero de documento del conductor al que desea actualizarle la licensia ");
         string? numberIdentification;
@@ -92,8 +92,22 @@ public class Driver : User
             Thread.Sleep(4000);
             return;
         }
-        years = experience;
+        int years = experience;
         driverAddExperience.DrivingExperience += years;
         Console.WriteLine("La experiencia del conductor fue actualizada con exito.");
     }
+
+    public static void ShowDrivers()
+    {
+        Console.WriteLine("=========================================================================");
+        Console.WriteLine($"{"ID",-10} {"Nombre",-20} {"Apellido",-20} {"Tipo Documento",-15} {"Documento",-15} {"Edad",-8} {"Correo Electronico",-30} {"Telefono",-15} {"Direccion",-30} {"Categoria de Licencia",-15} {"Experiencia",-10}");
+        Console.WriteLine("=========================================================================");
+        foreach (var driver in ListDrivers)
+        {
+            Console.WriteLine($"{driver.Id,-10}{driver.Name,-20}{driver.LastName,-20}{driver.TypeDocument,-15}{driver.IdentificationNumber,-15}{driver.CalculateAge,-8}{driver.Email,-30}{driver.PhoneNumber,-15}{driver.Address,-30}{driver.LicenseCategory,-15}{driver.DrivingExperience+" años",-15}");
+        }
+        Console.WriteLine("=========================================================================");
+    }
+
+
 }

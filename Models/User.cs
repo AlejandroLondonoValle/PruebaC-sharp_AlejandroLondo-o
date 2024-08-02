@@ -51,7 +51,6 @@ public class User
         Console.WriteLine($"Email: {Email}");
         Console.WriteLine($"Numero de telefono: {PhoneNumber}");
         Console.WriteLine($"Direccion: {Address}");
-        Console.WriteLine("================================================================");
     }
 
     protected int CalculateAge()
@@ -63,21 +62,22 @@ public class User
         {
             age--;
         }
-        int userAge = (Today.Year - BirthDate.Year) - (Today.Month < BirthDate.Month || (Today.Month == BirthDate.Month && Today.Day < BirthDate.Day)? 1 : 0);
+        int userAge = (Today.Year - BirthDate.Year) - (Today.Month < BirthDate.Month || (Today.Month == BirthDate.Month && Today.Day < BirthDate.Day) ? 1 : 0);
         // int userAge = Math.Floor(age);
         return userAge;
     }
-    public int miAge()
+    public int myAge()
     {
         return CalculateAge();
     }
 
-        protected void ShowAge()
+    protected void ShowAge()
     {
-        Console.WriteLine($"Edad: {miAge}");
+        Console.WriteLine($"Edad: {myAge}");
+        Console.WriteLine("================================================================");
 
     }
 
-    
+
 
 }

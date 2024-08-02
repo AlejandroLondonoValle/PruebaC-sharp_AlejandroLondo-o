@@ -53,4 +53,18 @@ public class Customer : User
         Console.WriteLine("la membresia fue actualizada con exito.");
         Thread.Sleep(4000);
     }
+
+
+    public static void ShowCustomers()
+    {
+        Console.WriteLine("=========================================================================");
+        Console.WriteLine($"{"ID",-10} {"Nombre",-20} {"Apellido",-20} {"Tipo Documento",-15} {"Documento",-15} {"Edad",-8} {"Correo Electronico",-30} {"Telefono",-15} {"Direccion",-30} {"Nivel Membresia",-15} {"Metodo de Pago",-15}");
+        Console.WriteLine("=========================================================================");
+        foreach (var customer in ListCustomers)
+        {
+            Console.WriteLine($"{customer.Id,-10}{customer.Name,-20}{customer.LastName,-20}{customer.TypeDocument,-15}{customer.IdentificationNumber,-15}{customer.CalculateAge,-8}{customer.Email,-30}{customer.PhoneNumber,-15}{customer.Address,-30}{customer.MembershipLevel,-15}{customer.PreferredPaymentMethod,-15}");
+        }
+        Console.WriteLine("=========================================================================");
+    }
+
 }
