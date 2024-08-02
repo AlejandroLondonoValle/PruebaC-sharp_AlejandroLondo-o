@@ -9,6 +9,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        Console.BackgroundColor = ConsoleColor.DarkBlue;
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
         while (true)
         {
             Console.Clear();
@@ -40,7 +42,7 @@ public class Program
             switch (opcion)
             {
                 case 0:
-                    Console.WriteLine("Gracias por utilizar nuestro Software Colegio Jose Maria Bernal, Hasta pronto! :)");
+                    Console.WriteLine("Gracias por utilizar nuestro Software < TransRiwi > , Hasta pronto! :)");
                     Thread.Sleep(1500);
                     Environment.Exit(0);
                     break;
