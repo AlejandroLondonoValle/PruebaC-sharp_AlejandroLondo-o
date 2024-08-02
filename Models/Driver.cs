@@ -61,6 +61,8 @@ public class Driver : User
         }
         newCategory = category;
         driverUpdate.LicenseCategory = newCategory;
+        Console.WriteLine("la categoria de la Licencia fue actualizada con exito.");
+        Thread.Sleep(4000);
 
     }
 
@@ -92,5 +94,6 @@ public class Driver : User
         }
         years = experience;
         driverAddExperience.DrivingExperience += years;
+        Console.WriteLine("La experiencia del conductor fue actualizada con exito.");
     }
 }
