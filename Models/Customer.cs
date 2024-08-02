@@ -58,13 +58,26 @@ public class Customer : User
     public static void ShowCustomers()
     {
         Console.WriteLine("=========================================================================");
-        Console.WriteLine($"{"ID",-10} {"Nombre",-20} {"Apellido",-20} {"Tipo Documento",-15} {"Documento",-15} {"Edad",-8} {"Correo Electronico",-30} {"Telefono",-15} {"Direccion",-30} {"Nivel Membresia",-15} {"Metodo de Pago",-15}");
+        Console.WriteLine("                           Lista de Clientes                             ");
         Console.WriteLine("=========================================================================");
         foreach (var customer in ListCustomers)
         {
-            Console.WriteLine($"{customer.Id,-10}{customer.Name,-20}{customer.LastName,-20}{customer.TypeDocument,-15}{customer.IdentificationNumber,-15}{customer.CalculateAge,-8}{customer.Email,-30}{customer.PhoneNumber,-15}{customer.Address,-30}{customer.MembershipLevel,-15}{customer.PreferredPaymentMethod,-15}");
+            Console.WriteLine($"ID: {customer.Id}");
+            Console.WriteLine($"Nombre: {customer.Name}");
+            Console.WriteLine($"Apellido: {customer.LastName}");
+            Console.WriteLine($"Tipo de Documento: {customer.TypeDocument}");
+            Console.WriteLine($"Numero de Identificacion: {customer.IdentificationNumber}");
+            Console.WriteLine($"Fecha de Nacimiento: {customer.BirthDate}");
+            Console.WriteLine($"Email: {customer.Email}");
+            Console.WriteLine($"Numero de telefono: {customer.PhoneNumber}");
+            Console.WriteLine($"Direccion: {customer.Address}");
+            Console.WriteLine($"Membresia: {customer.MembershipLevel}");
+            Console.WriteLine($"Preferencias de pago: {customer.PreferredPaymentMethod}");
+            Console.WriteLine("------------------------------------------------------------------------");
+            Thread.Sleep(200);
         }
         Console.WriteLine("=========================================================================");
+        Thread.Sleep(5000);
     }
 
 }

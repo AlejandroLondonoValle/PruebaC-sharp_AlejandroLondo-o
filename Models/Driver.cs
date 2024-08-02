@@ -100,13 +100,26 @@ public class Driver : User
     public static void ShowDrivers()
     {
         Console.WriteLine("=========================================================================");
-        Console.WriteLine($"{"ID",-10} {"Nombre",-20} {"Apellido",-20} {"Tipo Documento",-15} {"Documento",-15} {"Edad",-8} {"Correo Electronico",-30} {"Telefono",-15} {"Direccion",-30} {"Categoria de Licencia",-15} {"Experiencia",-10}");
+        Console.WriteLine("                           Lista de Conductores                          ");
         Console.WriteLine("=========================================================================");
         foreach (var driver in ListDrivers)
         {
-            Console.WriteLine($"{driver.Id,-10}{driver.Name,-20}{driver.LastName,-20}{driver.TypeDocument,-15}{driver.IdentificationNumber,-15}{driver.CalculateAge,-8}{driver.Email,-30}{driver.PhoneNumber,-15}{driver.Address,-30}{driver.LicenseCategory,-15}{driver.DrivingExperience+" años",-15}");
+        Console.WriteLine($"ID: {driver.Id}");
+        Console.WriteLine($"Nombre: {driver.Name}");
+        Console.WriteLine($"Apellido: {driver.LastName}");
+        Console.WriteLine($"Tipo de Documento: {driver.TypeDocument}");
+        Console.WriteLine($"Numero de Identificacion: {driver.IdentificationNumber}");
+        Console.WriteLine($"Fecha de Nacimiento: {driver.BirthDate}");
+        Console.WriteLine($"Email: {driver.Email}");
+        Console.WriteLine($"Numero de telefono: {driver.PhoneNumber}");
+        Console.WriteLine($"Direccion: {driver.Address}");
+        Console.WriteLine($"Licencia: {driver.LicenseNumber}");
+        Console.WriteLine($"Licencia Categoria: {driver.LicenseCategory}");
+        Console.WriteLine($"Experiencia: {driver.DrivingExperience} años");
+        Console.WriteLine("------------------------------------------------------------------------");
         }
         Console.WriteLine("=========================================================================");
+        Thread.Sleep(5000);
     }
 
 
