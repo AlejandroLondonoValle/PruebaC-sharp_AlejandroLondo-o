@@ -57,12 +57,16 @@ public class Program
                     Driver.ShowDrivers();
                     break;
                 case 5:
+                    Customer.ShowCustomersWithMoreThanThirtyYearsOld();
                     break;
                 case 6:
+                    Driver.ShowDriversMoreexperienced();
                     break;
                 case 7:
+                    Customer.ShowCustomersWithCreditCardPayment();
                     break;
                 case 8:
+                    Driver.ShowDriversWhitCategoryA2();
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");

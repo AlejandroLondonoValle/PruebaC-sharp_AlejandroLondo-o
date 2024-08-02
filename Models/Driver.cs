@@ -104,19 +104,74 @@ public class Driver : User
         Console.WriteLine("=========================================================================");
         foreach (var driver in ListDrivers)
         {
-        Console.WriteLine($"ID: {driver.Id}");
-        Console.WriteLine($"Nombre: {driver.Name}");
-        Console.WriteLine($"Apellido: {driver.LastName}");
-        Console.WriteLine($"Tipo de Documento: {driver.TypeDocument}");
-        Console.WriteLine($"Numero de Identificacion: {driver.IdentificationNumber}");
-        Console.WriteLine($"Fecha de Nacimiento: {driver.BirthDate}");
-        Console.WriteLine($"Email: {driver.Email}");
-        Console.WriteLine($"Numero de telefono: {driver.PhoneNumber}");
-        Console.WriteLine($"Direccion: {driver.Address}");
-        Console.WriteLine($"Licencia: {driver.LicenseNumber}");
-        Console.WriteLine($"Licencia Categoria: {driver.LicenseCategory}");
-        Console.WriteLine($"Experiencia: {driver.DrivingExperience} años");
-        Console.WriteLine("------------------------------------------------------------------------");
+            Console.WriteLine($"ID: {driver.Id}");
+            Console.WriteLine($"Nombre: {driver.Name}");
+            Console.WriteLine($"Apellido: {driver.LastName}");
+            Console.WriteLine($"Tipo de Documento: {driver.TypeDocument}");
+            Console.WriteLine($"Numero de Identificacion: {driver.IdentificationNumber}");
+            Console.WriteLine($"Fecha de Nacimiento: {driver.BirthDate}");
+            Console.WriteLine($"Email: {driver.Email}");
+            Console.WriteLine($"Numero de telefono: {driver.PhoneNumber}");
+            Console.WriteLine($"Direccion: {driver.Address}");
+            Console.WriteLine($"Licencia: {driver.LicenseNumber}");
+            Console.WriteLine($"Licencia Categoria: {driver.LicenseCategory}");
+            Console.WriteLine($"Experiencia: {driver.DrivingExperience} años");
+            driver.ShowAge();
+            Console.WriteLine("------------------------------------------------------------------------");
+            Thread.Sleep(800);
+        }
+        Console.WriteLine("=========================================================================");
+        Thread.Sleep(5000);
+    }
+
+    public static void ShowDriversMoreexperienced()
+    {
+        Console.WriteLine("=========================================================================");
+        Console.WriteLine("               Lista de Conductores Mas Experimentados                   ");
+        Console.WriteLine("=========================================================================");
+        foreach (var driver in ListDrivers.OrderByDescending(d => d.DrivingExperience))
+        {
+            Console.WriteLine($"ID: {driver.Id}");
+            Console.WriteLine($"Nombre: {driver.Name}");
+            Console.WriteLine($"Apellido: {driver.LastName}");
+            Console.WriteLine($"Tipo de Documento: {driver.TypeDocument}");
+            Console.WriteLine($"Numero de Identificacion: {driver.IdentificationNumber}");
+            Console.WriteLine($"Fecha de Nacimiento: {driver.BirthDate}");
+            Console.WriteLine($"Email: {driver.Email}");
+            Console.WriteLine($"Numero de telefono: {driver.PhoneNumber}");
+            Console.WriteLine($"Direccion: {driver.Address}");
+            Console.WriteLine($"Licencia: {driver.LicenseNumber}");
+            Console.WriteLine($"Licencia Categoria: {driver.LicenseCategory}");
+            Console.WriteLine($"Experiencia: {driver.DrivingExperience} años");
+            driver.ShowAge();
+            Console.WriteLine("------------------------------------------------------------------------");
+            Thread.Sleep(800);
+        }
+        Console.WriteLine("=========================================================================");
+        Thread.Sleep(5000);
+    }
+    public static void ShowDriversWhitCategoryA2()
+    {
+        Console.WriteLine("=========================================================================");
+        Console.WriteLine("               Lista de Conductores Mas Experimentados                   ");
+        Console.WriteLine("=========================================================================");
+        foreach (var driver in ListDrivers.OrderByDescending(d => d.LicenseCategory=="A2").ToList())
+        {
+            Console.WriteLine($"ID: {driver.Id}");
+            Console.WriteLine($"Nombre: {driver.Name}");
+            Console.WriteLine($"Apellido: {driver.LastName}");
+            Console.WriteLine($"Tipo de Documento: {driver.TypeDocument}");
+            Console.WriteLine($"Numero de Identificacion: {driver.IdentificationNumber}");
+            Console.WriteLine($"Fecha de Nacimiento: {driver.BirthDate}");
+            Console.WriteLine($"Email: {driver.Email}");
+            Console.WriteLine($"Numero de telefono: {driver.PhoneNumber}");
+            Console.WriteLine($"Direccion: {driver.Address}");
+            Console.WriteLine($"Licencia: {driver.LicenseNumber}");
+            Console.WriteLine($"Licencia Categoria: {driver.LicenseCategory}");
+            Console.WriteLine($"Experiencia: {driver.DrivingExperience} años");
+            driver.ShowAge();
+            Console.WriteLine("------------------------------------------------------------------------");
+            Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
         Thread.Sleep(5000);

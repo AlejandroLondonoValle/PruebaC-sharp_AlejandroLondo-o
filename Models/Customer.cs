@@ -18,10 +18,10 @@ public class Customer : User
     public static List<Customer> ListCustomers = new List<Customer>
     {
         new Customer("Gold","Tarjeta de Credito","Maria Alejandra","Lopez Arias","CC","1084606642",new DateOnly(2002,06,10),"lopez.mariaja@example.com","4197164178","Calle 75A # 99 - 55"),
-        new Customer("Platinum","Pago en Efectivo","Jose","Lopez Arias","CC","1084606643",new DateOnly(2003,07,15),"lopez.joseja@example.com","4197164179","Calle 85A # 100 - 56"),
+        new Customer("Platinum","Pago en Efectivo","Jose","Lopez Arias","CC","1084606643",new DateOnly(1993,07,15),"lopez.joseja@example.com","4197164179","Calle 85A # 100 - 56"),
         new Customer("Diamond","Tarjeta de Credito","Juan Guillermo","Ruiz Alvarez","CC","10846064466",new DateOnly(2000,12,22),"guillo.alvarez@example.com","974199816","Calle 67 # 45"),
         new Customer("Platinum","Pago en Efectivo","Valentina","Agudelo Arias","CC","1084606642",new DateOnly(2002,08,18),"agudelo.mariaja@example.com","4197164178","Calle 75A # 99 - 55"),
-        new Customer("Silver","Tarjeta de Credito","Jorge","Benavidez Pulgarin","CC","94197195",new DateOnly(2001,06,21),"Jorge.Benavidez@example.com","4197164178","Calle 99B # 99 - 67"),
+        new Customer("Silver","Tarjeta de Credito","Jorge","Benavidez Pulgarin","CC","94197195",new DateOnly(1991,06,21),"Jorge.Benavidez@example.com","4197164178","Calle 99B # 99 - 67"),
     };
     public void UpdateMembershipLevel()
     {
@@ -73,11 +73,65 @@ public class Customer : User
             Console.WriteLine($"Direccion: {customer.Address}");
             Console.WriteLine($"Membresia: {customer.MembershipLevel}");
             Console.WriteLine($"Preferencias de pago: {customer.PreferredPaymentMethod}");
+            customer.ShowAge();
             Console.WriteLine("------------------------------------------------------------------------");
-            Thread.Sleep(200);
+            Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
         Thread.Sleep(5000);
     }
 
+    public static void ShowCustomersWithMoreThanThirtyYearsOld()
+    {
+        Console.WriteLine("=========================================================================");
+        Console.WriteLine("                       Lista de Clientes Mayores de 30 años                     ");
+        Console.WriteLine("=========================================================================");
+        foreach (var customer in ListCustomers.Where(c => c.BirthDate.AddYears(30) < DateOnly.FromDateTime(DateTime.Now) ))
+        {
+            Console.WriteLine($"ID: {customer.Id}");
+            Console.WriteLine($"Nombre: {customer.Name}");
+            Console.WriteLine($"Apellido: {customer.LastName}");
+            Console.WriteLine($"Tipo de Documento: {customer.TypeDocument}");
+            Console.WriteLine($"Numero de Identificacion: {customer.IdentificationNumber}");
+            Console.WriteLine($"Fecha de Nacimiento: {customer.BirthDate}");
+            Console.WriteLine($"Email: {customer.Email}");
+            Console.WriteLine($"Numero de telefono: {customer.PhoneNumber}");
+            Console.WriteLine($"Direccion: {customer.Address}");
+            Console.WriteLine($"Membresia: {customer.MembershipLevel}");
+            Console.WriteLine($"Preferencias de pago: {customer.PreferredPaymentMethod}");
+            customer.ShowAge();
+            Console.WriteLine("------------------------------------------------------------------------");
+            Thread.Sleep(800);
+        }
+        Console.WriteLine("=========================================================================");
+        Thread.Sleep(5000);
+    }
+
+        public static void ShowCustomersWithCreditCardPayment()
+    {
+        Console.WriteLine("=========================================================================");
+        Console.WriteLine("                       Lista de Clientes Mayores de 30 años                     ");
+        Console.WriteLine("=========================================================================");
+        foreach (var customer in ListCustomers.Where(c => c.PreferredPaymentMethod == "Tarjeta de Credito").ToList())
+        {
+            Console.WriteLine($"ID: {customer.Id}");
+            Console.WriteLine($"Nombre: {customer.Name}");
+            Console.WriteLine($"Apellido: {customer.LastName}");
+            Console.WriteLine($"Tipo de Documento: {customer.TypeDocument}");
+            Console.WriteLine($"Numero de Identificacion: {customer.IdentificationNumber}");
+            Console.WriteLine($"Fecha de Nacimiento: {customer.BirthDate}");
+            Console.WriteLine($"Email: {customer.Email}");
+            Console.WriteLine($"Numero de telefono: {customer.PhoneNumber}");
+            Console.WriteLine($"Direccion: {customer.Address}");
+            Console.WriteLine($"Membresia: {customer.MembershipLevel}");
+            Console.WriteLine($"Preferencias de pago: {customer.PreferredPaymentMethod}");
+            customer.ShowAge();
+            Console.WriteLine("------------------------------------------------------------------------");
+            Thread.Sleep(800);
+        }
+        Console.WriteLine("=========================================================================");
+        Thread.Sleep(5000);
+    }
+
+   
 }

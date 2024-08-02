@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace PruebaC_Sharp_LuisAlejandroLondoñoValle.Models;
@@ -32,11 +33,6 @@ public class User
         Address = address;
     }
 
-    // public static User Create(string name, string lastName, string typeDocument, string identificationNumber, DateOnly birthdate, string email, string phoneNumber, string address)
-    // {
-    //     return new User(name, lastName, typeDocument, identificationNumber, birthdate, email, phoneNumber, address);
-    // }
-
     protected void ShowDetails()
     {
         Console.WriteLine("================================================================");
@@ -53,28 +49,21 @@ public class User
         Console.WriteLine($"Direccion: {Address}");
     }
 
-    protected int CalculateAge()
+    int age = 0;
+    protected int CalculateAge(int age)
     {
-        DateTime Today = DateTime.Now;
-        int age = Today.Year - BirthDate.Year / 365;
-        int months = Today.Month - BirthDate.Month;
-        if (months < 0 || (months == 0 && Today.Day < BirthDate.Day))
+        age = DateTime.Today.Year - BirthDate.Year;
+        int monthDiff = DateTime.Today.Month - BirthDate.Month;
+        if (monthDiff < 0 || (monthDiff == 0 && DateTime.Today.Day < BirthDate.Day))
         {
             age--;
         }
-        int userAge = (Today.Year - BirthDate.Year) - (Today.Month < BirthDate.Month || (Today.Month == BirthDate.Month && Today.Day < BirthDate.Day) ? 1 : 0);
-        // int userAge = Math.Floor(age);
-        return userAge;
-    }
-    public int myAge()
-    {
-        return CalculateAge();
+        return age;
     }
 
     protected void ShowAge()
     {
-        Console.WriteLine($"Edad: {myAge}");
-        Console.WriteLine("================================================================");
+        Console.WriteLine($"Edad: {CalculateAge(age)}");
 
     }
 
