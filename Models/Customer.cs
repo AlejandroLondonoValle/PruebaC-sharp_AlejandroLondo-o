@@ -78,7 +78,10 @@ public class Customer : User
             Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
-        Thread.Sleep(5000);
+        Console.WriteLine("Presiona cualquier tecla para continuar...");
+        Console.ReadKey();
+
+        Console.WriteLine("¡Continuando con el programa!");
     }
 
     public static void ShowCustomersWithMoreThanThirtyYearsOld()
@@ -86,7 +89,7 @@ public class Customer : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("                       Lista de Clientes Mayores de 30 años                     ");
         Console.WriteLine("=========================================================================");
-        foreach (var customer in ListCustomers.Where(c => c.BirthDate.AddYears(30) < DateOnly.FromDateTime(DateTime.Now) ))
+        foreach (var customer in ListCustomers.Where(c => c.BirthDate.AddYears(30) < DateOnly.FromDateTime(DateTime.Now)))
         {
             Console.WriteLine($"ID: {customer.Id}");
             Console.WriteLine($"Nombre: {customer.Name}");
@@ -104,13 +107,16 @@ public class Customer : User
             Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
-        Thread.Sleep(5000);
+        Console.WriteLine("Presiona cualquier tecla para continuar...");
+        Console.ReadKey();
+
+        Console.WriteLine("¡Continuando con el programa!");
     }
 
-        public static void ShowCustomersWithCreditCardPayment()
+    public static void ShowCustomersWithCreditCardPayment()
     {
         Console.WriteLine("=========================================================================");
-        Console.WriteLine("                       Lista de Clientes Mayores de 30 años                     ");
+        Console.WriteLine("              Lista de Clientes Preferenciales con tarjeta               ");
         Console.WriteLine("=========================================================================");
         foreach (var customer in ListCustomers.Where(c => c.PreferredPaymentMethod == "Tarjeta de Credito").ToList())
         {
@@ -130,8 +136,11 @@ public class Customer : User
             Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
-        Thread.Sleep(5000);
+        Console.WriteLine("Presiona cualquier tecla para continuar...");
+        Console.ReadKey();
+
+        Console.WriteLine("¡Continuando con el programa!");
     }
 
-   
+
 }

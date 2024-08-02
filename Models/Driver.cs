@@ -62,10 +62,9 @@ public class Driver : User
         string newCategory = category;
         driverUpdate.LicenseCategory = newCategory;
         Console.WriteLine("la categoria de la Licencia fue actualizada con exito.");
-        Thread.Sleep(4000);
+        Thread.Sleep(6000);
 
     }
-
     public static void AddExperience()
     {
         Console.Write("Ingrese el numero de documento del conductor al que desea actualizarle la licensia ");
@@ -95,8 +94,8 @@ public class Driver : User
         int years = experience;
         driverAddExperience.DrivingExperience += years;
         Console.WriteLine("La experiencia del conductor fue actualizada con exito.");
+        Thread.Sleep(6000);
     }
-
     public static void ShowDrivers()
     {
         Console.WriteLine("=========================================================================");
@@ -121,7 +120,10 @@ public class Driver : User
             Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
-        Thread.Sleep(5000);
+        Console.WriteLine("Presiona cualquier tecla para continuar...");
+        Console.ReadKey();
+
+        Console.WriteLine("¡Continuando con el programa!");
     }
 
     public static void ShowDriversMoreexperienced()
@@ -148,7 +150,10 @@ public class Driver : User
             Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
-        Thread.Sleep(5000);
+        Console.WriteLine("Presiona cualquier tecla para continuar...");
+        Console.ReadKey();
+
+        Console.WriteLine("¡Continuando con el programa!");
     }
     public static void ShowDriversWhitCategoryA2()
     {
@@ -174,7 +179,10 @@ public class Driver : User
             Thread.Sleep(800);
         }
         Console.WriteLine("=========================================================================");
-        Thread.Sleep(5000);
+        Console.WriteLine("Presiona cualquier tecla para continuar...");
+        Console.ReadKey();
+
+        Console.WriteLine("¡Continuando con el programa!");
     }
 
 
