@@ -10,7 +10,7 @@ public class Program
     public static void Main(string[] args)
     {
         Console.BackgroundColor = ConsoleColor.DarkBlue;
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.ForegroundColor = ConsoleColor.White;
         while (true)
         {
             Console.Clear();
