@@ -155,7 +155,7 @@ public class Driver : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("               Lista de Conductores Mas Experimentados                   ");
         Console.WriteLine("=========================================================================");
-        foreach (var driver in ListDrivers.OrderByDescending(d => d.LicenseCategory=="A2").ToList())
+        foreach (var driver in ListDrivers.Where(d => d.LicenseCategory == "A2").ToList())
         {
             Console.WriteLine($"ID: {driver.Id}");
             Console.WriteLine($"Nombre: {driver.Name}");
