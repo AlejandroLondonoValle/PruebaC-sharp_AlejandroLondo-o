@@ -80,8 +80,8 @@ public class Customer : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey();
-
         Console.WriteLine("¡Continuando con el programa!");
+        Thread.Sleep(800);
     }
 
     public static void ShowCustomersWithMoreThanThirtyYearsOld()
@@ -109,8 +109,8 @@ public class Customer : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey();
-
         Console.WriteLine("¡Continuando con el programa!");
+        Thread.Sleep(800);
     }
 
     public static void ShowCustomersWithCreditCardPayment()
@@ -138,8 +138,8 @@ public class Customer : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey();
-
         Console.WriteLine("¡Continuando con el programa!");
+        Thread.Sleep(800);
     }
 
 

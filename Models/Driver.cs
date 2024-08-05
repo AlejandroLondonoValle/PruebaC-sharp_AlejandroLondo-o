@@ -122,8 +122,8 @@ public class Driver : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey();
-
         Console.WriteLine("¡Continuando con el programa!");
+        Thread.Sleep(800);
     }
 
     public static void ShowDriversMoreexperienced()
@@ -152,8 +152,8 @@ public class Driver : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey();
-
         Console.WriteLine("¡Continuando con el programa!");
+        Thread.Sleep(800);
     }
     public static void ShowDriversWhitCategoryA2()
     {
@@ -181,8 +181,8 @@ public class Driver : User
         Console.WriteLine("=========================================================================");
         Console.WriteLine("Presiona cualquier tecla para continuar...");
         Console.ReadKey();
-
         Console.WriteLine("¡Continuando con el programa!");
+        Thread.Sleep(800);
     }
 
 
